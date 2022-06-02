@@ -2,3 +2,103 @@
 
 
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css);
+
+*{/* resetar as margens e paddins */
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%;
+    height: 100vh;/* autura de visao para diversos dispositivos */
+    overflow: hidden;/* para os elementos não passarem da tela */
+    position: relative;/* para posicionar .banner */
+}
+
+.img-wrapper{/* pega 100% de header */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;/* para os elementos não passarem da tela */
+    background-color: rgba(55, 55, 55, 0.75);/* fundo para imagem */
+}
+/* para que o fundo se ajuste a img-wrapper, pois img é filho de img-wrapper */
+.img-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/* fazer com que a imagem cubra a div */
+    opacity: 0.5;/* opacidade de 50% */
+    animation: zoom 25s;/* zoom, chama o @keyframes zoom abaixo */
+}
+/* a imagem de fundo começa em 1.5 e volta para 1, tamanho normal */
+@keyframes zoom{
+    0%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.banner{
+    position: absolute;/* ficaram na frente do fundo */
+    top: 30%;/* header tá com position relative */
+    left: 12%;
+}
+
+.banner h1{
+    color: #ffffff;
+    font-size: 3rem;/* 3 vezes o tamanho da fonte padrao 16px */
+    font-family: "Oxanium",serif;
+    font-weight: 400;
+    text-shadow: .2rem .3rem 2px rgba(0, 0, 0, .4);/* sombra */
+    margin-bottom: 1.5rem;/* espaco do paragrafo */
+    opacity: 0;/* interage com keyframe moveBanner */
+    /* chama o keyframes moveBanner, 0.2s:tempo para aparecer */
+    animation: moveBanner 2s 0.2s forwards;
+}
+
+.banner p{
+    font-family: "Barlow Semi Condensed";
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-shadow: .1rem .2rem  rgba(0, 0, 0, .4);
+    margin-bottom: 1.5rem;/* espaco do buttom */
+    opacity: 0;/* interage com keyframe moveBanner */
+    /* 0.6s:tempo para aparecer */
+    animation: moveBanner 2s 0.6s forwards;/* chama o keyframes moveBanner */
+}
+
+.banner button{
+    font-family: "Barlow Semi Condensed";
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-radius: 5px;
+    /* cor gradiente de fundo do button */
+    background: #DA22FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge,
+    Firefox 16+, Chrome 26+,
+    Opera 12+, Safari 7+ */
+    padding: 0.5rem 1rem;/* primeiro:cima e embaixo, segundo: dos lados */
+    border: none;/* sem borda */
+    cursor: pointer;
+    opacity: 0;/* interage com keyframe moveBanner */
+    /* 0.9s:tempo para aparecer */
+    animation: moveBanner 2s 0.9s forwards;/* chama o keyframes moveBanner */
+}
+/* o titulo inicia em baixo e sobe girando 30 graus */
+@keyframes moveBanner{
+    0%{
+        transform: translateY(10rem) rotateY(-30deg);
+    }
+    100%{
+        transform: translateY(0) rotateY(0);
+        opacity: 1;/* opacity começa em 0 e termina em 1 */
+    }
+}
+
+
+/* tempo 55:37 aula 02 */
