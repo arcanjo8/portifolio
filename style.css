@@ -16,6 +16,10 @@
     --font-secundary: "Barlow Semi Condensed",serif;
     --font-action: "Barlow Semi Condensed", serif;
 }
+/* a página rolor suave */
+html{
+    scroll-behavior: smooth;
+}
 
 .hamburguer{
     /*background-color: red;*/
@@ -185,6 +189,7 @@ header{
     top: 0;
     right: -20rem;/* vai jogar pra fora da tela */
     transition: all 1s;/* suavisar a entrada */
+    z-index: 150;/* pra ficar por cima */
 }
 
 .show-menu .sidebar{
@@ -580,7 +585,68 @@ header{
     grid-column: 2;/* o botão ficara na coluna 2 */
 }
 
-/* tempo 9:45 aula 07 */
+footer{
+    width: 100%;
+    height: 7rem;
+    background-color: #17181b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* espaco entre o paragrafo e os elementos de ul */
+.footer-content{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content p{
+    font-family: var(--font-secundary);
+    color: #a7a7a7;
+    font-size: 1.2rem;
+}
+
+.social-list a{
+    margin: 0 2rem;
+    color: #a7a7a7;
+    font-size: 1.5rem; /* tamanho dos icones redes sociais*/
+}
+
+.social-list ul {
+    display: flex;/* uma rede social uma ao lado da outra */
+}
+
+#link-topo{
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    width: 3rem;
+    height: 3rem;
+    background: #6a3093;
+    background: -webkit-linear-gradient(to right, #a044ff, #6a3093);
+    background: linear-gradient(to left, #a044ff, #6a3093);
+    /* para o item ficar no centro da caixa, essas tres propriedades */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* cor da seta */
+    border-radius: 1rem;
+    box-shadow: 0 0.1rem 0.6rem #00000009;
+}
+
+/* tempo 8:51 fim 15:39 aula 08 */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
